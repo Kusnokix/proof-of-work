@@ -1,0 +1,24 @@
+{
+  "name": "proof-of-work",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "wasm": "npm run wasm:web && npm run wasm:node",
+    "dev": "npm run wasm && vite",
+    "build": "npm run wasm && tsc && vite build",
+    "preview": "vite preview",
+    "wasm:web": "wasm-pack build wasm --target web --out-dir pkg",
+    "wasm:node": "wasm-pack build wasm --target nodejs --out-dir pkg-node",
+    "server": "node server/index.ts",
+    "dev:server": "node --watch server/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
+  },
+  "dependencies": {
+    "superjson": "^2.2.6"
+  }
+}
